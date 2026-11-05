@@ -12,8 +12,8 @@
    "leitura_cache": 563251,
    "saida": 7845
   },
-  "turnos_outros": 4,
-  "custo_outros": 4.101,
+  "turnos_outros": 8,
+  "custo_outros": 7.3833,
   "python_antes_de_salvar": "1/1",
   "turnos": [
    {
@@ -49,8 +49,32 @@
    {
     "texto": "Cria um github pro projeto, vou por no linkedin o post com o paragráfo",
     "tipo": "outro",
-    "chamadas": 9,
-    "custo": 0.7777
+    "chamadas": 14,
+    "custo": 1.1191
+   },
+   {
+    "texto": "DÊ uma reduzida nesse texto, para caber no post do linkedin mas manten",
+    "tipo": "outro",
+    "chamadas": 2,
+    "custo": 0.1685
+   },
+   {
+    "texto": "fazer o seguinte crie um artigo sobre isso acho que dá para utilizar a",
+    "tipo": "outro",
+    "chamadas": 16,
+    "custo": 1.915
+   },
+   {
+    "texto": "Uma imagem boa para esse artigo na internet com resolução boa",
+    "tipo": "outro",
+    "chamadas": 8,
+    "custo": 0.696
+   },
+   {
+    "texto": "hashtags pro post",
+    "tipo": "outro",
+    "chamadas": 2,
+    "custo": 0.1613
    }
   ]
  },
@@ -94,6 +118,61 @@
     "tipo": "outro",
     "chamadas": 8,
     "custo": 0.8503
+   }
+  ]
+ },
+ "cfadc69c": {
+  "sessao": "cfadc69c",
+  "data": "2026-11-05 09:00",
+  "modelo": "claude-sonnet-5-5",
+  "turnos_estudo": 3,
+  "chamadas_estudo": 8,
+  "custo_estudo": 0.2944,
+  "custo_estudo_preco_opus": 0.5887,
+  "tokens_estudo": {
+   "gravacao_cache": 50166,
+   "leitura_cache": 561215,
+   "saida": 3754
+  },
+  "turnos_outros": 3,
+  "custo_outros": 3.7878,
+  "python_antes_de_salvar": "0/0",
+  "turnos": [
+   {
+    "texto": "conseguimos continuar de onde paramos ?",
+    "tipo": "estudo",
+    "chamadas": 2,
+    "custo": 0.2021
+   },
+   {
+    "texto": "Se A é uma matriz simétrica então A - A linha é - 0 correto ?",
+    "tipo": "estudo",
+    "chamadas": 4,
+    "custo": 0.058
+   },
+   {
+    "texto": "sim, quero ver também como confirmar que algo é matriz simétrica, há u",
+    "tipo": "estudo",
+    "chamadas": 2,
+    "custo": 0.0343
+   },
+   {
+    "texto": "consegue ver esse artifact ? https://claude.ai/artifact/5E5dBLbYtFRuEh",
+    "tipo": "outro",
+    "chamadas": 6,
+    "custo": 0.6754
+   },
+   {
+    "texto": "use claude in chrome talvez te ajude a ler no meu navegador",
+    "tipo": "outro",
+    "chamadas": 28,
+    "custo": 2.302
+   },
+   {
+    "texto": "sim",
+    "tipo": "outro",
+    "chamadas": 11,
+    "custo": 0.8104
    }
   ]
  }

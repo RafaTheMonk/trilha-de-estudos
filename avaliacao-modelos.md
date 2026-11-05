@@ -48,7 +48,8 @@ Gerado por `harness/medir.py`. Custo a preço de API, só para comparar, porque 
 | Data | Sessão | Modelo | Turnos de estudo | Custo do estudo (US$) | Por turno | Por turno a preço de Opus | Python antes de salvar | Outros turnos (US$) |
 |---|---|---|---|---|---|---|---|---|
 | 2026-11-03 | e24381d6 | Opus 5.5 | 3 | 0.46 | 0.15 | 0.15 | 0/0 | 1 (0.85) |
-| 2026-11-05 | f8ddb23f | Opus 5.5 | 2 | 0.71 | 0.35 | 0.35 | 1/1 | 4 (4.10) |
+| 2026-11-05 | f8ddb23f | Opus 5.5 | 2 | 0.71 | 0.35 | 0.35 | 1/1 | 8 (7.38) |
+| 2026-11-05 | cfadc69c | Sonnet 5.5 | 3 | 0.29 | 0.10 | 0.20 | 0/0 | 3 (3.79) |
 <!-- sessoes:fim -->
 
 ### Checagens dos arquivos
