@@ -135,8 +135,12 @@ def resumo_sessao(arquivo, ajustes):
     for n in ajustes.get(os.path.basename(arquivo)[:8], []):
         if 1 <= n <= len(turnos):
             turnos[n - 1]["outro"] = True
+    # O modelo da sessão é o que mais gerou saída nos turnos de estudo, para
+    # que uma troca de modelo no meio (ex.: estudo no Sonnet, harness no Opus)
+    # não rotule o estudo com o modelo errado.
+    base = [t for t in turnos if not t["outro"]] or turnos
     saida_por_modelo = {}
-    for t in turnos:
+    for t in base:
         for m, u in t["chamadas"]:
             if familia(m):
                 saida_por_modelo[m] = saida_por_modelo.get(m, 0) + u.get("output_tokens", 0)
