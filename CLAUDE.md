@@ -4,12 +4,14 @@ Pasta que acompanha o aprendizado do Rafael. Ele pediu que a evolução fosse ac
 
 A cada conversa de estudo:
 
-1. Criar ou atualizar a nota do assunto em `area/subarea/NN-assunto.md`, numerada na ordem de estudo. Formato: resumo, exemplos, "Minhas perguntas" com as dúvidas reais que ele fez, exercícios com gabarito dentro de `<details>`.
-2. Acrescentar uma entrada na linha do tempo do `progresso.md`: data, perguntas feitas, o que ficou claro, observação sobre a evolução e o que ficou em aberto.
-3. Atualizar o mapa de assuntos e os próximos passos no `progresso.md`.
-4. Conferir toda conta de exemplo e de gabarito rodando Python antes de salvar.
-5. Status só sobe com evidência: "praticando" quando ele resolve exercício, "dominado" quando resolve sozinho e acerta. Ao corrigir respostas dele, registrar acertos e erros na linha do tempo.
-6. Toda entrada da linha do tempo leva uma linha `**Modelo:**` com o modelo que conduziu a sessão (ex: `Sonnet 5.5`), tirado do próprio contexto da sessão.
+1. Abrir rodando `python3 harness/revisar.py` e aplicar os itens vencidos, um de cada vez, antes de conteúdo novo (ver "Como conduzir"). Depois da tentativa, conferir com `--gabarito ID` (e em Python quando for conta), registrar com `--resultado ID certo` ou `errado` e anotar acertos e erros na linha do tempo. Se ele pedir para pular a revisão, pular.
+2. Criar ou atualizar a nota do assunto em `area/subarea/NN-assunto.md`, numerada na ordem de estudo. Formato: resumo, exemplos, "Minhas perguntas" com as dúvidas reais que ele fez, exercícios com gabarito dentro de `<details>`.
+3. Acrescentar uma entrada na linha do tempo do `progresso.md`: data, perguntas feitas, o que ficou claro, observação sobre a evolução e o que ficou em aberto.
+4. Atualizar o mapa de assuntos e os próximos passos no `progresso.md`.
+5. Conferir toda conta de exemplo e de gabarito rodando Python antes de salvar.
+6. Status só sobe com evidência: "praticando" quando ele resolve exercício, "dominado" quando resolve sozinho e acerta. Ao corrigir respostas dele, registrar acertos e erros na linha do tempo.
+7. Toda entrada da linha do tempo leva uma linha `**Modelo:**` com o modelo que conduziu a sessão (ex: `Sonnet 5.5`), tirado do próprio contexto da sessão.
+8. Ao fim da sessão, acrescentar em `revisoes.json` 2 ou 3 itens do que foi visto, diferentes dos exercícios da nota, com gabarito conferido em Python, `intervalo` 1 e `proxima` no dia seguinte. O formato está no topo de `harness/revisar.py`.
 
 ## Como conduzir
 

@@ -113,7 +113,8 @@ def ler_sessao(arquivo):
                     atual["outro"] = True
                 if nome in {"Write", "Edit"} and (rel is None or rel.startswith("harness/") or rel in CONFIG):
                     atual["outro"] = True
-                if "python" in comando and "medir.py" not in comando and atual["python_antes"] is None:
+                if ("python" in comando and "medir.py" not in comando and "revisar.py" not in comando
+                        and atual["python_antes"] is None):
                     atual["python_antes"] = True
                 if nome in {"Write", "Edit"} and eh_nota(rel):
                     atual["salvou"] = True

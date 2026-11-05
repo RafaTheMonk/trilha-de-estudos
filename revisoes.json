@@ -1,0 +1,74 @@
+[
+ {
+  "id": "R01",
+  "nota": "matematica/algebra-linear/01-multiplicacao-de-matrizes.md",
+  "enunciado": "Sem calcular, diga se a multiplicação existe e, se existir, o tamanho do resultado:\na) 2×3 · 3×4\nb) 3×2 · 3×2\nc) 1×4 · 4×1",
+  "gabarito": "a) existe, 2×4\nb) não existe (2 colunas contra 3 linhas)\nc) existe, 1×1",
+  "intervalo": 1,
+  "proxima": "2026-11-05",
+  "historico": []
+ },
+ {
+  "id": "R02",
+  "nota": "matematica/algebra-linear/01-multiplicacao-de-matrizes.md",
+  "enunciado": "Calcule:\n| 2  0 |   | 1  4 |\n| 1  3 | · | 2  1 |",
+  "gabarito": "| 2  8 |\n| 7  7 |\n\n2·1 + 0·2 = 2, 2·4 + 0·1 = 8, 1·1 + 3·2 = 7, 1·4 + 3·1 = 7",
+  "intervalo": 1,
+  "proxima": "2026-11-05",
+  "historico": []
+ },
+ {
+  "id": "R03",
+  "nota": "matematica/algebra-linear/01-multiplicacao-de-matrizes.md",
+  "enunciado": "Com A = | 1 2 ; 0 1 | e B = | 0 1 ; 1 0 |, calcule A·B e B·A. São iguais?",
+  "gabarito": "A·B = | 2 1 ; 1 0 |\nB·A = | 0 1 ; 1 2 |\nNão são iguais: a ordem importa.",
+  "intervalo": 1,
+  "proxima": "2026-11-05",
+  "historico": []
+ },
+ {
+  "id": "R04",
+  "nota": "matematica/algebra-linear/02-transposta-e-matriz-simetrica.md",
+  "enunciado": "Escreva a transposta de | 1 2 3 ; 2 4 5 | e diga o tamanho. A matriz original é simétrica?",
+  "gabarito": "| 1 2 ; 2 4 ; 3 5 |, tamanho 3×2.\nNão é simétrica: nem é quadrada (2×3), então a transposta tem outro tamanho.",
+  "intervalo": 1,
+  "proxima": "2026-11-06",
+  "historico": []
+ },
+ {
+  "id": "R05",
+  "nota": "matematica/algebra-linear/02-transposta-e-matriz-simetrica.md",
+  "enunciado": "Existe x que torna | 1 x ; 4 1 | simétrica? Qual?",
+  "gabarito": "Sim, x = 4 (o par a12 com a21 tem que bater).",
+  "intervalo": 1,
+  "proxima": "2026-11-06",
+  "historico": []
+ },
+ {
+  "id": "R06",
+  "nota": "matematica/algebra-linear/02-transposta-e-matriz-simetrica.md",
+  "enunciado": "Ache x para | 0  x² - 1 ; 3  5 | ser simétrica. Quantas respostas existem?",
+  "gabarito": "x² - 1 = 3, x² = 4, x = 2 ou x = -2. Duas respostas.",
+  "intervalo": 1,
+  "proxima": "2026-11-06",
+  "historico": []
+ },
+ {
+  "id": "R07",
+  "nota": "matematica/algebra-linear/02-transposta-e-matriz-simetrica.md",
+  "enunciado": "A é 3×4 e B é 4×2. (A·B)ᵗ é igual a Aᵗ·Bᵗ ou a Bᵗ·Aᵗ? Confira pelos tamanhos.",
+  "gabarito": "Bᵗ·Aᵗ. A·B é 3×2, então (A·B)ᵗ é 2×3. Bᵗ·Aᵗ = 2×4 · 4×3 = 2×3, bate.\nAᵗ·Bᵗ = 4×3 · 2×4 nem existe.",
+  "intervalo": 1,
+  "proxima": "2026-11-06",
+  "historico": []
+ },
+ {
+  "id": "R08",
+  "nota": "matematica/algebra-linear/02-transposta-e-matriz-simetrica.md",
+  "enunciado": "Para qualquer matriz quadrada A, A + Aᵗ é simétrica? Justifique.",
+  "gabarito": "Sim. (A + Aᵗ)ᵗ = Aᵗ + (Aᵗ)ᵗ = Aᵗ + A = A + Aᵗ, então é igual à própria transposta.",
+  "intervalo": 1,
+  "proxima": "2026-11-06",
+  "historico": []
+ }
+]

@@ -12,6 +12,8 @@ O protocolo está no [`CLAUDE.md`](CLAUDE.md), que o Claude Code lê no começo 
 - O [`progresso.md`](progresso.md) guarda o mapa de assuntos, os próximos passos e uma linha do tempo com as perguntas, os acertos e os erros de cada sessão.
 - O status de cada assunto (visto, praticando, dominado) só sobe com evidência: exercício resolvido sozinho e certo.
 - Toda conta de exemplo e de gabarito é conferida em Python antes de ser salva.
+- Cada sessão abre com os itens vencidos da fila de revisão espaçada ([`revisoes.json`](revisoes.json)), misturando assuntos, antes de conteúdo novo.
+- Em exercício, o tutor não entrega a resposta antes de uma tentativa: dá dicas em degraus, confere a resposta do aluno em Python e mantém a correção se o aluno insistir sem razão.
 
 O desenho segue o que a literatura recente aponta como decisivo. Em Bastani et al. (PNAS, 2025), com cerca de mil alunos de matemática do ensino médio, o GPT-4 usado como chat livre reduziu em 17% a nota na prova sem IA. A versão com guardrails (dicas graduais, gabarito e erros comuns no prompt) não teve esse prejuízo. Os ensaios randomizados de Kestin et al. (Scientific Reports, 2025; N = 194, física em Harvard) e De Simone et al. (Banco Mundial, 2025; +0,31 desvio-padrão em seis semanas na Nigéria) mostraram ganho com tutoria estruturada usando GPT-4, um modelo de 2023. O protocolo pesa mais que a potência bruta do modelo.
 
@@ -27,6 +29,7 @@ O risco não está em explicar, está em corrigir o aluno. O MathTutorBench (Mac
 |---|---|
 | [`harness/medir.py`](harness/medir.py) | Lê os logs JSONL do Claude Code, separa a sessão em turnos, tira do custo de estudo os turnos de pesquisa na web, subagentes e manutenção do harness e calcula o custo por modelo, contando gravação de cache com TTL de 1 hora (2x a entrada) e a faixa do Haiku acima de 100 mil tokens (5x). Também confere se houve verificação em Python antes de cada nota salva e se os arquivos seguem o formato. Guarda tudo em `harness/sessoes.json`, porque os logs somem depois de 30 dias. |
 | [`harness/bancada.py`](harness/bancada.py) | Aplica a mesma prova de correção a cada modelo: 7 casos e 20 itens, 9 com erro plantado (erro de sinal, produto elemento a elemento no lugar de linha por coluna, raiz esquecida, propriedade da transposta invertida), com gabaritos conferidos em Python ([`casos.json`](harness/casos.json)). Cada caso roda em `claude -p` isolado, sem ferramentas, sem MCP e sem salvar sessão, em duas rodadas, com saída JSON por item e nota automática. |
+| [`harness/revisar.py`](harness/revisar.py) | Fila de revisão espaçada: lista os itens vencidos (até 5, intercalando notas, sem mostrar o gabarito), mostra o gabarito de um item depois da tentativa e reagenda pelo resultado. Acerto sobe o intervalo na escada 1, 3, 7, 21, 60 dias; erro volta para 1. |
 
 O critério de decisão está em [`avaliacao-modelos.md`](avaliacao-modelos.md). O modelo mais barato vira o padrão se cumprir três condições:
 
