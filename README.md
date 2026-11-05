@@ -17,7 +17,7 @@ O desenho segue o que a literatura recente aponta como decisivo. Em Bastani et a
 
 ## A pergunta: dá para usar um modelo mais barato?
 
-Medindo os logs das sessões, cerca de 90% dos tokens são contexto relido do cache (1,1 milhão de 1,27 milhão) e a saída gerada é só uns 1%. Por isso o Sonnet 5.5 corta de 35% a 45% do custo por turno em relação ao Opus 5.5, e não 50%: a leitura de cache custa o mesmo US$ 0,20 por milhão de tokens nos dois. O Haiku 5.5 sai por volta de 1/30.
+Medindo os logs das sessões, cerca de 90% dos tokens são contexto relido do cache (1,1 milhão de 1,27 milhão) e a saída gerada é só uns 1%. Como o Sonnet 5.5 custa metade do Opus 5.5 em todos os componentes, inclusive a leitura de cache (US$ 0,10 contra US$ 0,20 por milhão de tokens), ele corta cerca de 50% do custo para o mesmo número de tokens. O Haiku 5.5 sai por volta de 1/34 enquanto o prompt fica abaixo de 100 mil tokens, e cerca de 1/7 acima disso, porque o preço dele quintuplica.
 
 O risco não está em explicar, está em corrigir o aluno. O MathTutorBench (Macina et al., EMNLP 2025) mostra que saber resolver não se traduz em saber ensinar, e que a tutoria piora em diálogos longos. "LLMs cannot spot math errors" (2025) mostra que mesmo modelos de ponta têm dificuldade para localizar o primeiro passo errado numa solução de estudante.
 

@@ -18,7 +18,7 @@ ou gh, ou mexe no harness, no CLAUDE.md ou no avaliacao-modelos.md. O resto é
 estudo. Turno só de texto que não foi estudo (ex.: redigir um post) não tem como
 ser detectado: marque à mão com --outro SESSAO:N, usando o número de --turnos.
 
-Custo em dólar a preço de API (tabela PRECOS abaixo, de 06/10/2026). O plano
+Custo em dólar a preço de API (tabela PRECOS abaixo, conferida na página oficial em 05/11/2026). O plano
 cobra em limite de uso e não em dólar, então o valor serve para comparar
 modelos. A coluna "a preço de Opus" aplica o preço do Opus aos mesmos tokens,
 o que é aproximado: outro modelo gastaria um número um pouco diferente de tokens.
@@ -42,7 +42,7 @@ AVALIACAO = os.path.join(TRILHA, "avaliacao-modelos.md")
 # Gravação de cache: 2x a entrada (TTL de 1 hora) ou 1,25x (TTL de 5 minutos).
 PRECOS = {
     "opus": (4.00, 0.20, 20.00),
-    "sonnet": (2.00, 0.20, 10.00),
+    "sonnet": (2.00, 0.10, 10.00),  # leitura de cache a 0,05x no Opus 5.5 e no Sonnet 5.5
     "haiku": (0.10, 0.01, 0.50),  # até 100 mil tokens de prompt; acima disso, 5x
     "fable": (10.00, 0.25, 50.00),
 }
