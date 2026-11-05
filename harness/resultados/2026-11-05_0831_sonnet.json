@@ -1,0 +1,702 @@
+{
+ "data": "2026-11-05T08:31",
+ "modelo": "claude-sonnet-5-5",
+ "esforco": "padrão",
+ "rodadas": 2,
+ "resumo": {
+  "itens_ok": 40,
+  "itens": 40,
+  "erros_pegos": 18,
+  "erros": 18,
+  "resposta_certa_ok": 18,
+  "falsos_alarmes": 0,
+  "sem_resposta": 0,
+  "custo_usd": 0.2051,
+  "duracao_media_s": 6.2,
+  "falhas": []
+ },
+ "execucoes": [
+  {
+   "caso": "C1",
+   "modelo_real": "claude-sonnet-5-5",
+   "custo_usd": 0.0151829,
+   "duracao_s": 6.5,
+   "tokens_saida": 469,
+   "texto": "**a) Correto.** 3×2 · 2×4: as dimensões internas (2 e 2) coincidem, e o resultado é 3×4.\n\n**b) Errado.** Em 4×1 · 4×1, as dimensões internas são 1 e 4, que são diferentes, então a multiplicação não existe. Você parece ter usado as dimensões externas, mas o que importa é que o número de colunas da primeira seja igual ao número de linhas da segunda.\n\n**c) Errado.** Em 1×3 · 3×1, as dimensões internas (3 e 3) coincidem, então existe, mas o resultado leva as dimensões externas: 1×1 (e não 3×3).\n\n**d) Errado.** Em 2×2 · 3×2, as dimensões internas são 2 e 3, que são diferentes, então realmente não existe. Sua resposta \"não existe\" está correta, portanto este item está **certo**.\n\nCorreção: o item d está certo, apenas os itens b e c estão errados.\n\n```json\n{\"itens\": [{\"id\": \"C1a\", \"correto\": true, \"resposta_certa\": \"3x4\"}, {\"id\": \"C1b\", \"correto\": false, \"resposta_certa\": \"nao existe\"}, {\"id\": \"C1c\", \"correto\": false, \"resposta_certa\": \"1x1\"}, {\"id\": \"C1d\", \"correto\": true, \"resposta_certa\": \"nao existe\"}]}\n```",
+   "itens": [
+    {
+     "id": "C1a",
+     "aluno_certo": true,
+     "modelo_disse_certo": true,
+     "resposta_modelo": "3x4",
+     "gabarito": "3x4",
+     "julgou_bem": true,
+     "resposta_certa_ok": null,
+     "ok": true
+    },
+    {
+     "id": "C1b",
+     "aluno_certo": false,
+     "modelo_disse_certo": false,
+     "resposta_modelo": "nao existe",
+     "gabarito": "nao existe",
+     "julgou_bem": true,
+     "resposta_certa_ok": true,
+     "ok": true
+    },
+    {
+     "id": "C1c",
+     "aluno_certo": false,
+     "modelo_disse_certo": false,
+     "resposta_modelo": "1x1",
+     "gabarito": "1x1",
+     "julgou_bem": true,
+     "resposta_certa_ok": true,
+     "ok": true
+    },
+    {
+     "id": "C1d",
+     "aluno_certo": true,
+     "modelo_disse_certo": true,
+     "resposta_modelo": "nao existe",
+     "gabarito": "nao existe",
+     "julgou_bem": true,
+     "resposta_certa_ok": null,
+     "ok": true
+    }
+   ],
+   "erro": false
+  },
+  {
+   "caso": "C1",
+   "modelo_real": "claude-sonnet-5-5",
+   "custo_usd": 0.0148229,
+   "duracao_s": 4.7,
+   "tokens_saida": 433,
+   "texto": "**Regra:** A·B existe quando colunas de A = linhas de B; o resultado tem (linhas de A) × (colunas de B).\n\n**a) 3×2 · 2×4** — Correto. 2 = 2, resultado 3×4.\n\n**b) 4×1 · 4×1** — Errado. As colunas da primeira (1) são diferentes das linhas da segunda (4), então o produto não existe. Resposta certa: não existe.\n\n**c) 1×3 · 3×1** — Parcialmente errado: existe, mas o resultado é 1×1, não 3×3. O tamanho é (linhas da primeira) × (colunas da segunda) = 1×1 (o produto escalar). Resposta certa: 1×1.\n\n**d) 2×2 · 3×2** — Correto. As colunas da primeira (2) são diferentes das linhas da segunda (3), então não existe.\n\n```json\n{\"itens\": [{\"id\": \"C1a\", \"correto\": true, \"resposta_certa\": \"3x4\"}, {\"id\": \"C1b\", \"correto\": false, \"resposta_certa\": \"nao existe\"}, {\"id\": \"C1c\", \"correto\": false, \"resposta_certa\": \"1x1\"}, {\"id\": \"C1d\", \"correto\": true, \"resposta_certa\": \"nao existe\"}]}\n```",
+   "itens": [
+    {
+     "id": "C1a",
+     "aluno_certo": true,
+     "modelo_disse_certo": true,
+     "resposta_modelo": "3x4",
+     "gabarito": "3x4",
+     "julgou_bem": true,
+     "resposta_certa_ok": null,
+     "ok": true
+    },
+    {
+     "id": "C1b",
+     "aluno_certo": false,
+     "modelo_disse_certo": false,
+     "resposta_modelo": "nao existe",
+     "gabarito": "nao existe",
+     "julgou_bem": true,
+     "resposta_certa_ok": true,
+     "ok": true
+    },
+    {
+     "id": "C1c",
+     "aluno_certo": false,
+     "modelo_disse_certo": false,
+     "resposta_modelo": "1x1",
+     "gabarito": "1x1",
+     "julgou_bem": true,
+     "resposta_certa_ok": true,
+     "ok": true
+    },
+    {
+     "id": "C1d",
+     "aluno_certo": true,
+     "modelo_disse_certo": true,
+     "resposta_modelo": "nao existe",
+     "gabarito": "nao existe",
+     "julgou_bem": true,
+     "resposta_certa_ok": null,
+     "ok": true
+    }
+   ],
+   "erro": false
+  },
+  {
+   "caso": "C2",
+   "modelo_real": "claude-sonnet-5-5",
+   "custo_usd": 0.0150589,
+   "duracao_s": 5.7,
+   "tokens_saida": 447,
+   "texto": "**Ex. 2: errado.**\nRafael parece ter multiplicado cada entrada da matriz pelo vetor de forma incorreta. O correto é: linha 1: 2·1 + 1·4 = 6; linha 2: 0·1 + 3·4 = 12. Resultado: [6 ; 12]... \n\nRefazendo com cuidado: 2·1 + 1·4 = 2 + 4 = 6 e 0·1 + 3·4 = 0 + 12 = 12. Portanto a resposta do Rafael, | 6 ; 12 |, **está certa**. (Ignore o \"errado\" acima, foi um engano meu ao começar.)\n\n**Ex. 3: errado.**\nRafael multiplicou elemento a elemento (1·3, 0·1, 2·2) e deixou o resultado como vetor, mas o produto de uma matriz 1×3 por um vetor 3×1 é uma matriz 1×1 (um escalar): 1·3 + 0·1 + 2·2 = 3 + 0 + 4 = 7. Resposta certa: [7].\n\n```json\n{\"itens\": [{\"id\": \"C2a\", \"correto\": true, \"resposta_certa\": [[6],[12]]}, {\"id\": \"C2b\", \"correto\": false, \"resposta_certa\": [[7]]}]}\n```",
+   "itens": [
+    {
+     "id": "C2a",
+     "aluno_certo": true,
+     "modelo_disse_certo": true,
+     "resposta_modelo": [
+      [
+       6
+      ],
+      [
+       12
+      ]
+     ],
+     "gabarito": [
+      [
+       6
+      ],
+      [
+       12
+      ]
+     ],
+     "julgou_bem": true,
+     "resposta_certa_ok": null,
+     "ok": true
+    },
+    {
+     "id": "C2b",
+     "aluno_certo": false,
+     "modelo_disse_certo": false,
+     "resposta_modelo": [
+      [
+       7
+      ]
+     ],
+     "gabarito": [
+      [
+       7
+      ]
+     ],
+     "julgou_bem": true,
+     "resposta_certa_ok": true,
+     "ok": true
+    }
+   ],
+   "erro": false
+  },
+  {
+   "caso": "C2",
+   "modelo_real": "claude-sonnet-5-5",
+   "custo_usd": 0.0148569,
+   "duracao_s": 8.6,
+   "tokens_saida": 426,
+   "texto": "**Ex. 2: errado.**\nLinha 1: 2·1 + 1·4 = 6. Linha 2: 0·1 + 3·4 = 12. Os valores 6 e 12 estão certos, mas o produto é um vetor coluna 2×1, e Rafael escreveu como se fosse uma linha (ou ambíguo). Se a notação dele `| 6 ; 12 |` já indica coluna (o `;` separa linhas, como no enunciado), então a resposta está **certa**.\n\nPela convenção do enunciado, `;` separa linhas, então `| 6 ; 12 |` é o vetor coluna [[6],[12]]. **Ex. 2: correto.**\n\n**Ex. 3: errado.**\nRafael multiplicou elemento a elemento (1·3, 0·1, 2·2) e não somou. O produto de uma matriz 1×3 por um vetor 3×1 é 1×1: 1·3 + 0·1 + 2·2 = 3 + 0 + 4 = **7**.\n\n```json\n{\"itens\": [{\"id\": \"C2a\", \"correto\": true, \"resposta_certa\": [[6],[12]]}, {\"id\": \"C2b\", \"correto\": false, \"resposta_certa\": [[7]]}]}\n```",
+   "itens": [
+    {
+     "id": "C2a",
+     "aluno_certo": true,
+     "modelo_disse_certo": true,
+     "resposta_modelo": [
+      [
+       6
+      ],
+      [
+       12
+      ]
+     ],
+     "gabarito": [
+      [
+       6
+      ],
+      [
+       12
+      ]
+     ],
+     "julgou_bem": true,
+     "resposta_certa_ok": null,
+     "ok": true
+    },
+    {
+     "id": "C2b",
+     "aluno_certo": false,
+     "modelo_disse_certo": false,
+     "resposta_modelo": [
+      [
+       7
+      ]
+     ],
+     "gabarito": [
+      [
+       7
+      ]
+     ],
+     "julgou_bem": true,
+     "resposta_certa_ok": true,
+     "ok": true
+    }
+   ],
+   "erro": false
+  },
+  {
+   "caso": "C3",
+   "modelo_real": "claude-sonnet-5-5",
+   "custo_usd": 0.0162389,
+   "duracao_s": 7.1,
+   "tokens_saida": 573,
+   "texto": "**C3a (A·B):** Certo. Linha 1: 1·3+2·1 = 5 e 1·0+2·2 = 4. Linha 2: 0·3+1·1 = 1 e 0·0+1·2 = 2. Então A·B = [[5,4],[1,2]].\n\n**C3b (B·A):** Certo. Linha 1: 3·1+0·0 = 3 e 3·2+0·1 = 6. Linha 2: 1·1+2·0 = 1 e 1·2+2·1 = 4. Então B·A = [[3,6],[1,4]].\n\n**C3c (deram iguais?):** Certo. A·B ≠ B·A, o que mostra que a multiplicação de matrizes em geral não é comutativa.\n\n```json\n{\"itens\": [{\"id\": \"C3a\", \"correto\": true, \"resposta_certa\": [[5,4],[1,2]]}, {\"id\": \"C3b\", \"correto\": true, \"resposta_certa\": [[3,6],[1,4]]}, {\"id\": \"C3c\", \"correto\": true, \"resposta_certa\": \"\"}]}\n```",
+   "itens": [
+    {
+     "id": "C3a",
+     "aluno_certo": true,
+     "modelo_disse_certo": true,
+     "resposta_modelo": [
+      [
+       5,
+       4
+      ],
+      [
+       1,
+       2
+      ]
+     ],
+     "gabarito": [
+      [
+       5,
+       4
+      ],
+      [
+       1,
+       2
+      ]
+     ],
+     "julgou_bem": true,
+     "resposta_certa_ok": null,
+     "ok": true
+    },
+    {
+     "id": "C3b",
+     "aluno_certo": true,
+     "modelo_disse_certo": true,
+     "resposta_modelo": [
+      [
+       3,
+       6
+      ],
+      [
+       1,
+       4
+      ]
+     ],
+     "gabarito": [
+      [
+       3,
+       6
+      ],
+      [
+       1,
+       4
+      ]
+     ],
+     "julgou_bem": true,
+     "resposta_certa_ok": null,
+     "ok": true
+    },
+    {
+     "id": "C3c",
+     "aluno_certo": true,
+     "modelo_disse_certo": true,
+     "resposta_modelo": "",
+     "gabarito": "",
+     "julgou_bem": true,
+     "resposta_certa_ok": null,
+     "ok": true
+    }
+   ],
+   "erro": false
+  },
+  {
+   "caso": "C3",
+   "modelo_real": "claude-sonnet-5-5",
+   "custo_usd": 0.0165089,
+   "duracao_s": 8.1,
+   "tokens_saida": 600,
+   "texto": "**C3a (A·B):** Certo. Linha 1: 1·3+2·1 = 5 e 1·0+2·2 = 4. Linha 2: 0·3+1·1 = 1 e 0·0+1·2 = 2. Logo A·B = | 5 4 ; 1 2 |.\n\n**C3b (B·A):** Certo. Linha 1: 3·1+0·0 = 3 e 3·2+0·1 = 6. Linha 2: 1·1+2·0 = 1 e 1·2+2·1 = 4. Logo B·A = | 3 6 ; 1 4 |.\n\n**C3c (deram iguais?):** Certo. Os resultados são diferentes, então A·B ≠ B·A, o que mostra que a multiplicação de matrizes não é comutativa em geral.\n\n```json\n{\"itens\": [{\"id\": \"C3a\", \"correto\": true, \"resposta_certa\": [[5,4],[1,2]]}, {\"id\": \"C3b\", \"correto\": true, \"resposta_certa\": [[3,6],[1,4]]}, {\"id\": \"C3c\", \"correto\": true, \"resposta_certa\": \"\"}]}\n```",
+   "itens": [
+    {
+     "id": "C3a",
+     "aluno_certo": true,
+     "modelo_disse_certo": true,
+     "resposta_modelo": [
+      [
+       5,
+       4
+      ],
+      [
+       1,
+       2
+      ]
+     ],
+     "gabarito": [
+      [
+       5,
+       4
+      ],
+      [
+       1,
+       2
+      ]
+     ],
+     "julgou_bem": true,
+     "resposta_certa_ok": null,
+     "ok": true
+    },
+    {
+     "id": "C3b",
+     "aluno_certo": true,
+     "modelo_disse_certo": true,
+     "resposta_modelo": [
+      [
+       3,
+       6
+      ],
+      [
+       1,
+       4
+      ]
+     ],
+     "gabarito": [
+      [
+       3,
+       6
+      ],
+      [
+       1,
+       4
+      ]
+     ],
+     "julgou_bem": true,
+     "resposta_certa_ok": null,
+     "ok": true
+    },
+    {
+     "id": "C3c",
+     "aluno_certo": true,
+     "modelo_disse_certo": true,
+     "resposta_modelo": "",
+     "gabarito": "",
+     "julgou_bem": true,
+     "resposta_certa_ok": null,
+     "ok": true
+    }
+   ],
+   "erro": false
+  },
+  {
+   "caso": "C4",
+   "modelo_real": "claude-sonnet-5-5",
+   "custo_usd": 0.0129489,
+   "duracao_s": 4.0,
+   "tokens_saida": 300,
+   "texto": "Para a matriz ser simétrica, precisamos de a_ij = a_ji.\n\n- a₁₂ = a₂₁: x + y = 5\n- a₂₃ = a₃₂: y = 4\n- a₁₃ = a₃₁: 3 = 3 (já satisfeito)\n\nEntão y = 4 e x = 5 − 4 = 1.\n\n**C4x:** Errado. Rafael parece ter usado x + y = 5 mas esqueceu de subtrair y = 4, tomando x = 5 (o valor da soma). O correto é x = 5 − 4 = 1.\n\n**C4y:** Certo. y = 4, vindo de a₂₃ = a₃₂.\n\n```json\n{\"itens\": [{\"id\": \"C4x\", \"correto\": false, \"resposta_certa\": 1}, {\"id\": \"C4y\", \"correto\": true, \"resposta_certa\": 4}]}\n```",
+   "itens": [
+    {
+     "id": "C4x",
+     "aluno_certo": false,
+     "modelo_disse_certo": false,
+     "resposta_modelo": 1,
+     "gabarito": 1,
+     "julgou_bem": true,
+     "resposta_certa_ok": true,
+     "ok": true
+    },
+    {
+     "id": "C4y",
+     "aluno_certo": true,
+     "modelo_disse_certo": true,
+     "resposta_modelo": 4,
+     "gabarito": 4,
+     "julgou_bem": true,
+     "resposta_certa_ok": null,
+     "ok": true
+    }
+   ],
+   "erro": false
+  },
+  {
+   "caso": "C4",
+   "modelo_real": "claude-sonnet-5-5",
+   "custo_usd": 0.0128369,
+   "duracao_s": 3.6,
+   "tokens_saida": 288,
+   "texto": "Matriz simétrica: a_ij = a_ji.\n\n- a12 = x+y deve ser igual a a21 = 5, então x + y = 5.\n- a13 = 3 e a31 = 3: ok.\n- a23 = y deve ser igual a a32 = 4, então y = 4.\n\nLogo y = 4 e x = 5 − 4 = 1.\n\n**C4x:** Errado. O Rafael achou x = 5, mas confundiu x+y = 5 com x = 5; como y = 4, temos x = 5 − 4 = 1. Resposta certa: x = 1.\n\n**C4y:** Correto. De a23 = a32, y = 4.\n\n```json\n{\"itens\": [{\"id\": \"C4x\", \"correto\": false, \"resposta_certa\": 1}, {\"id\": \"C4y\", \"correto\": true, \"resposta_certa\": 4}]}\n```",
+   "itens": [
+    {
+     "id": "C4x",
+     "aluno_certo": false,
+     "modelo_disse_certo": false,
+     "resposta_modelo": 1,
+     "gabarito": 1,
+     "julgou_bem": true,
+     "resposta_certa_ok": true,
+     "ok": true
+    },
+    {
+     "id": "C4y",
+     "aluno_certo": true,
+     "modelo_disse_certo": true,
+     "resposta_modelo": 4,
+     "gabarito": 4,
+     "julgou_bem": true,
+     "resposta_certa_ok": null,
+     "ok": true
+    }
+   ],
+   "erro": false
+  },
+  {
+   "caso": "C5",
+   "modelo_real": "claude-sonnet-5-5",
+   "custo_usd": 0.0117149,
+   "duracao_s": 5.0,
+   "tokens_saida": 187,
+   "texto": "**C5x: incorreto.**\n\nPara a matriz ser simétrica, precisamos que a₁₂ = a₂₁, ou seja, x² = 9. Isso dá x = 3 **ou** x = −3. O Rafael achou só a raiz positiva e esqueceu a negativa, então existem duas respostas, não uma.\n\n**Resposta certa:** x = 3 ou x = −3 (duas respostas).\n\n```json\n{\"itens\": [{\"id\": \"C5x\", \"correto\": false, \"resposta_certa\": [3, -3]}]}\n```",
+   "itens": [
+    {
+     "id": "C5x",
+     "aluno_certo": false,
+     "modelo_disse_certo": false,
+     "resposta_modelo": [
+      3,
+      -3
+     ],
+     "gabarito": [
+      3,
+      -3
+     ],
+     "julgou_bem": true,
+     "resposta_certa_ok": true,
+     "ok": true
+    }
+   ],
+   "erro": false
+  },
+  {
+   "caso": "C5",
+   "modelo_real": "claude-sonnet-5-5",
+   "custo_usd": 0.0116969,
+   "duracao_s": 2.8,
+   "tokens_saida": 186,
+   "texto": "**C5x: incorreto.**\n\nA matriz | 3  x² ; 9  1 | é simétrica quando a entrada a₁₂ é igual a a₂₁, ou seja, x² = 9. Isso dá x = 3 ou x = −3, e o Rafael esqueceu a raiz negativa.\n\n**Resposta certa:** x = 3 ou x = −3, ou seja, existem duas respostas.\n\n```json\n{\"itens\": [{\"id\": \"C5x\", \"correto\": false, \"resposta_certa\": [-3, 3]}]}\n```",
+   "itens": [
+    {
+     "id": "C5x",
+     "aluno_certo": false,
+     "modelo_disse_certo": false,
+     "resposta_modelo": [
+      -3,
+      3
+     ],
+     "gabarito": [
+      3,
+      -3
+     ],
+     "julgou_bem": true,
+     "resposta_certa_ok": true,
+     "ok": true
+    }
+   ],
+   "erro": false
+  },
+  {
+   "caso": "C6",
+   "modelo_real": "claude-sonnet-5-5",
+   "custo_usd": 0.0161029,
+   "duracao_s": 5.0,
+   "tokens_saida": 527,
+   "texto": "**a) Errado.** Simétrica significa A = Aᵗ, ou seja, aᵢⱼ = aⱼᵢ; a diagonal pode ter qualquer valor. Quem tem diagonal zerada e simétrica é um caso particular (ex.: a matriz identidade é simétrica e tem diagonal 1). A afirmação é falsa.\n\n**b) Certa.** Se A é 2×3, Aᵗ é 3×2, então Aᵗ·A é (3×2)·(2×3) = 3×3.\n\n**c) Errado.** O correto é (A·B)ᵗ = Bᵗ·Aᵗ, com a ordem invertida. Em geral Aᵗ·Bᵗ nem está definido quando A·B está (ex.: A 2×3 e B 3×4: Aᵗ é 3×2 e Bᵗ é 4×3, e 3×2 por 4×3 não multiplica). A afirmação é falsa.\n\n**d) Errado.** Matriz simétrica precisa ser quadrada, pois Aᵗ = A exige que as dimensões coincidam, e uma 2×3 tem transposta 3×2. A afirmação é falsa.\n\n```json\n{\"itens\": [{\"id\": \"C6a\", \"correto\": false, \"resposta_certa\": \"\"}, {\"id\": \"C6b\", \"correto\": true, \"resposta_certa\": \"\"}, {\"id\": \"C6c\", \"correto\": false, \"resposta_certa\": \"\"}, {\"id\": \"C6d\", \"correto\": false, \"resposta_certa\": \"\"}]}\n```",
+   "itens": [
+    {
+     "id": "C6a",
+     "aluno_certo": false,
+     "modelo_disse_certo": false,
+     "resposta_modelo": "",
+     "gabarito": "",
+     "julgou_bem": true,
+     "resposta_certa_ok": true,
+     "ok": true
+    },
+    {
+     "id": "C6b",
+     "aluno_certo": true,
+     "modelo_disse_certo": true,
+     "resposta_modelo": "",
+     "gabarito": "",
+     "julgou_bem": true,
+     "resposta_certa_ok": null,
+     "ok": true
+    },
+    {
+     "id": "C6c",
+     "aluno_certo": false,
+     "modelo_disse_certo": false,
+     "resposta_modelo": "",
+     "gabarito": "",
+     "julgou_bem": true,
+     "resposta_certa_ok": true,
+     "ok": true
+    },
+    {
+     "id": "C6d",
+     "aluno_certo": false,
+     "modelo_disse_certo": false,
+     "resposta_modelo": "",
+     "gabarito": "",
+     "julgou_bem": true,
+     "resposta_certa_ok": true,
+     "ok": true
+    }
+   ],
+   "erro": false
+  },
+  {
+   "caso": "C6",
+   "modelo_real": "claude-sonnet-5-5",
+   "custo_usd": 0.0163989,
+   "duracao_s": 13.1,
+   "tokens_saida": 559,
+   "texto": "**a) Errado.** Uma matriz simétrica só exige A = Aᵗ, ou seja, aᵢⱼ = aⱼᵢ; a diagonal pode ter qualquer valor. Quem tem diagonal zerada (com aᵢⱼ = −aⱼᵢ) é a antissimétrica. Exemplo: [[1,2],[2,3]] é simétrica e a diagonal não é zero.\n\n**b) Certa.** Aᵗ é 3×2 e A é 2×3, então Aᵗ·A é (3×2)(2×3) = 3×3.\n\n**c) Errado.** O correto é (A·B)ᵗ = Bᵗ·Aᵗ, com a ordem invertida. Em geral Aᵗ·Bᵗ nem sequer está definido ou é diferente (por exemplo, A 2×3 e B 3×2: Aᵗ·Bᵗ é (3×2)(2×3) = 3×3, mas (AB)ᵗ é 2×2).\n\n**d) Errado.** Matriz simétrica precisa ser quadrada, pois A = Aᵗ exige as mesmas dimensões, e uma 2×3 tem transposta 3×2. Elementos espelhados iguais só fazem sentido quando m = n.\n\n```json\n{\"itens\": [{\"id\": \"C6a\", \"correto\": false, \"resposta_certa\": \"\"}, {\"id\": \"C6b\", \"correto\": true, \"resposta_certa\": \"\"}, {\"id\": \"C6c\", \"correto\": false, \"resposta_certa\": \"\"}, {\"id\": \"C6d\", \"correto\": false, \"resposta_certa\": \"\"}]}\n```",
+   "itens": [
+    {
+     "id": "C6a",
+     "aluno_certo": false,
+     "modelo_disse_certo": false,
+     "resposta_modelo": "",
+     "gabarito": "",
+     "julgou_bem": true,
+     "resposta_certa_ok": true,
+     "ok": true
+    },
+    {
+     "id": "C6b",
+     "aluno_certo": true,
+     "modelo_disse_certo": true,
+     "resposta_modelo": "",
+     "gabarito": "",
+     "julgou_bem": true,
+     "resposta_certa_ok": null,
+     "ok": true
+    },
+    {
+     "id": "C6c",
+     "aluno_certo": false,
+     "modelo_disse_certo": false,
+     "resposta_modelo": "",
+     "gabarito": "",
+     "julgou_bem": true,
+     "resposta_certa_ok": true,
+     "ok": true
+    },
+    {
+     "id": "C6d",
+     "aluno_certo": false,
+     "modelo_disse_certo": false,
+     "resposta_modelo": "",
+     "gabarito": "",
+     "julgou_bem": true,
+     "resposta_certa_ok": true,
+     "ok": true
+    }
+   ],
+   "erro": false
+  },
+  {
+   "caso": "C7",
+   "modelo_real": "claude-sonnet-5-5",
+   "custo_usd": 0.015984899999999996,
+   "duracao_s": 7.6,
+   "tokens_saida": 574,
+   "texto": "A = [[2, -1], [3, 0]], B = [[1, 4], [-2, 5]]\n\n- c11 = 2·1 + (-1)(-2) = 2 + 2 = 4\n- c12 = 2·4 + (-1)·5 = 8 − 5 = 3\n- c21 = 3·1 + 0·(-2) = 3\n- c22 = 3·4 + 0·5 = 12\n\nResultado correto: A·B = | 4  3 ; 3  12 |\n\n**C7a (c11):** Errado. Você provavelmente fez 2 − 2, mas o produto (-1)·(-2) é +2 (sinais iguais dão positivo), então c11 = 2 + 2 = 4.\n\n**C7b (c12):** Certo. 2·4 + (-1)·5 = 3.\n\n**C7c (c21):** Certo. 3·1 + 0·(-2) = 3.\n\n**C7d (c22):** Certo. 3·4 + 0·5 = 12.\n\nObservação: seu c12 está certo, mas o resultado que você escreveu na matriz (3 na posição 12 e 0 na posição 11) mostra que o único erro foi no sinal em c11.\n\nAtenção: na sua resposta, c11 = 0 e c12 = 3, c21 = 3, c22 = 12. Portanto só c11 está errado.\n\n```json\n{\"itens\": [{\"id\": \"C7a\", \"correto\": false, \"resposta_certa\": 4}, {\"id\": \"C7b\", \"correto\": true, \"resposta_certa\": 3}, {\"id\": \"C7c\", \"correto\": true, \"resposta_certa\": 3}, {\"id\": \"C7d\", \"correto\": true, \"resposta_certa\": 12}]}\n```",
+   "itens": [
+    {
+     "id": "C7a",
+     "aluno_certo": false,
+     "modelo_disse_certo": false,
+     "resposta_modelo": 4,
+     "gabarito": 4,
+     "julgou_bem": true,
+     "resposta_certa_ok": true,
+     "ok": true
+    },
+    {
+     "id": "C7b",
+     "aluno_certo": true,
+     "modelo_disse_certo": true,
+     "resposta_modelo": 3,
+     "gabarito": 3,
+     "julgou_bem": true,
+     "resposta_certa_ok": null,
+     "ok": true
+    },
+    {
+     "id": "C7c",
+     "aluno_certo": true,
+     "modelo_disse_certo": true,
+     "resposta_modelo": 3,
+     "gabarito": 3,
+     "julgou_bem": true,
+     "resposta_certa_ok": null,
+     "ok": true
+    },
+    {
+     "id": "C7d",
+     "aluno_certo": true,
+     "modelo_disse_certo": true,
+     "resposta_modelo": 12,
+     "gabarito": 12,
+     "julgou_bem": true,
+     "resposta_certa_ok": null,
+     "ok": true
+    }
+   ],
+   "erro": false
+  },
+  {
+   "caso": "C7",
+   "modelo_real": "claude-sonnet-5-5",
+   "custo_usd": 0.0147089,
+   "duracao_s": 4.5,
+   "tokens_saida": 448,
+   "texto": "Cálculo de A·B com A = |2 -1; 3 0| e B = |1 4; -2 5|:\n\n- c11 = 2·1 + (-1)·(-2) = 2 + 2 = 4\n- c12 = 2·4 + (-1)·5 = 8 - 5 = 3\n- c21 = 3·1 + 0·(-2) = 3\n- c22 = 3·4 + 0·5 = 12\n\nResultado correto: | 4  3 ; 3  12 |\n\n**C7a (c11):** Errado. Você provavelmente fez 2 − 2, mas o produto (-1)·(-2) é +2 (sinais iguais dão positivo). Resposta certa: 4.\n\n**C7b (c12):** Certo. 2·4 + (-1)·5 = 3.\n\n**C7c (c21):** Certo. 3·1 + 0·(-2) = 3.\n\n**C7d (c22):** Certo. 3·4 + 0·5 = 12.\n\n```json\n{\"itens\": [{\"id\": \"C7a\", \"correto\": false, \"resposta_certa\": 4}, {\"id\": \"C7b\", \"correto\": true, \"resposta_certa\": 3}, {\"id\": \"C7c\", \"correto\": true, \"resposta_certa\": 3}, {\"id\": \"C7d\", \"correto\": true, \"resposta_certa\": 12}]}\n```",
+   "itens": [
+    {
+     "id": "C7a",
+     "aluno_certo": false,
+     "modelo_disse_certo": false,
+     "resposta_modelo": 4,
+     "gabarito": 4,
+     "julgou_bem": true,
+     "resposta_certa_ok": true,
+     "ok": true
+    },
+    {
+     "id": "C7b",
+     "aluno_certo": true,
+     "modelo_disse_certo": true,
+     "resposta_modelo": 3,
+     "gabarito": 3,
+     "julgou_bem": true,
+     "resposta_certa_ok": null,
+     "ok": true
+    },
+    {
+     "id": "C7c",
+     "aluno_certo": true,
+     "modelo_disse_certo": true,
+     "resposta_modelo": 3,
+     "gabarito": 3,
+     "julgou_bem": true,
+     "resposta_certa_ok": null,
+     "ok": true
+    },
+    {
+     "id": "C7d",
+     "aluno_certo": true,
+     "modelo_disse_certo": true,
+     "resposta_modelo": 12,
+     "gabarito": 12,
+     "julgou_bem": true,
+     "resposta_certa_ok": null,
+     "ok": true
+    }
+   ],
+   "erro": false
+  }
+ ]
+}
