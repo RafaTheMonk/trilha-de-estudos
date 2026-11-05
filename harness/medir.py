@@ -13,8 +13,10 @@ O Claude Code apaga logs com mais de 30 dias, por isso o --registrar guarda
 cada sessão em harness/sessoes.json e nunca apaga o que já está lá.
 
 Cada mensagem do Rafael abre um turno. O turno conta como "outro" (e fica fora
-do custo de estudo) quando usa pesquisa na web, subagente ou workflow, ou mexe
-nos arquivos do harness. O resto é estudo.
+do custo de estudo) quando usa pesquisa na web, subagente ou workflow, roda git
+ou gh, ou mexe no harness, no CLAUDE.md ou no avaliacao-modelos.md. O resto é
+estudo. Turno só de texto que não foi estudo (ex.: redigir um post) não tem como
+ser detectado: marque à mão com --outro SESSAO:N, usando o número de --turnos.
 
 Custo em dólar a preço de API (tabela PRECOS abaixo, de 06/10/2026). O plano
 cobra em limite de uso e não em dólar, então o valor serve para comparar
@@ -45,6 +47,8 @@ PRECOS = {
     "fable": (10.00, 0.25, 50.00),
 }
 PESQUISA = {"WebSearch", "WebFetch", "Agent", "Workflow"}
+CONFIG = {"CLAUDE.md", "avaliacao-modelos.md", ".gitignore"}
+AJUSTES = os.path.join(HARNESS, "ajustes.json")
 INICIO_COMPARACAO = datetime.date(2026, 11, 5)
 TRACOS = re.compile("[–—]")
 
@@ -105,7 +109,9 @@ def ler_sessao(arquivo):
                 comando = entrada.get("command", "") if nome == "Bash" else ""
                 if nome in PESQUISA or "bancada.py" in comando or "claude -p" in comando:
                     atual["outro"] = True
-                if nome in {"Write", "Edit"} and (rel is None or rel.startswith("harness/")):
+                if re.search(r"(^|[;&|]\s*)(git|gh)\s", comando):
+                    atual["outro"] = True
+                if nome in {"Write", "Edit"} and (rel is None or rel.startswith("harness/") or rel in CONFIG):
                     atual["outro"] = True
                 if "python" in comando and "medir.py" not in comando and atual["python_antes"] is None:
                     atual["python_antes"] = True
@@ -122,10 +128,13 @@ def ler_sessao(arquivo):
     return turnos
 
 
-def resumo_sessao(arquivo):
+def resumo_sessao(arquivo, ajustes):
     turnos = ler_sessao(arquivo)
     if not turnos:
         return None
+    for n in ajustes.get(os.path.basename(arquivo)[:8], []):
+        if 1 <= n <= len(turnos):
+            turnos[n - 1]["outro"] = True
     saida_por_modelo = {}
     for t in turnos:
         for m, u in t["chamadas"]:
@@ -219,11 +228,22 @@ def main():
     ap = argparse.ArgumentParser(description="Custo e checagens das sessões da trilha.")
     ap.add_argument("--registrar", action="store_true")
     ap.add_argument("--incluir", action="append", default=[], help="log .jsonl de sessão aberta fora da trilha")
-    ap.add_argument("--turnos", action="store_true", help="mostra cada turno")
+    ap.add_argument("--turnos", action="store_true", help="mostra cada turno, numerado")
+    ap.add_argument("--outro", action="append", default=[], metavar="SESSAO:N",
+                    help="marca à mão o turno N da sessão como fora do estudo (fica salvo em harness/ajustes.json)")
     args = ap.parse_args()
 
+    ajustes = json.load(open(AJUSTES)) if os.path.exists(AJUSTES) else {}
+    for item in args.outro:
+        sessao, n = item.split(":")
+        ajustes.setdefault(sessao[:8], [])
+        if int(n) not in ajustes[sessao[:8]]:
+            ajustes[sessao[:8]].append(int(n))
+    if args.outro:
+        json.dump(ajustes, open(AJUSTES, "w"), indent=1)
+
     arquivos = sorted(glob.glob(os.path.join(LOGS, "*.jsonl"))) + [os.path.expanduser(a) for a in args.incluir]
-    atuais = [r for r in (resumo_sessao(a) for a in arquivos) if r]
+    atuais = [r for r in (resumo_sessao(a, ajustes) for a in arquivos) if r]
     guardadas = json.load(open(SESSOES)) if os.path.exists(SESSOES) else {}
     for s in atuais:
         guardadas[s["sessao"]] = s
@@ -233,8 +253,8 @@ def main():
     if args.turnos:
         for s in atuais:
             print(f"\n{s['sessao']} ({nome_curto(s['modelo'])})")
-            for t in s["turnos"]:
-                print(f"  [{t['tipo']:6}] {t['chamadas']:2} chamadas  US$ {t['custo']:.3f}  {t['texto']}")
+            for n, t in enumerate(s["turnos"], 1):
+                print(f"  {n:2}. [{t['tipo']:6}] {t['chamadas']:2} chamadas  US$ {t['custo']:.3f}  {t['texto']}")
 
     problemas = checar_arquivos()
     print("\nChecagens dos arquivos:", "nenhum problema" if not problemas else "")
