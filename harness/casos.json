@@ -1,0 +1,81 @@
+{
+  "sobre": "Prova fixa da bancada: respostas de aluno com erros plantados, tiradas dos exercícios das notas 01 e 02. Gabaritos conferidos em Python em 05/11/2026. 20 itens, 9 com erro.",
+  "formatos": {
+    "tamanho": "texto como \"3x4\" ou \"nao existe\"",
+    "matriz": "lista de linhas, ex.: [[1,2],[3,4]]; vetor coluna: [[6],[12]]",
+    "numero": "um número, ex.: 4",
+    "conjunto": "lista com todos os valores possíveis, ex.: [1,2]",
+    "vf": "string vazia \"\" (só importa se está certo ou não)"
+  },
+  "casos": [
+    {
+      "id": "C1",
+      "enunciado": "Diga se a multiplicação existe e, se existir, o tamanho do resultado:\na) 3×2 · 2×4\nb) 4×1 · 4×1\nc) 1×3 · 3×1\nd) 2×2 · 3×2",
+      "resposta": "a) existe, 3×4\nb) existe, 4×4\nc) existe, 3×3\nd) não existe",
+      "itens": [
+        {"id": "C1a", "descricao": "item a", "tipo": "tamanho", "aluno_certo": true, "certa": "3x4"},
+        {"id": "C1b", "descricao": "item b", "tipo": "tamanho", "aluno_certo": false, "certa": "nao existe"},
+        {"id": "C1c", "descricao": "item c", "tipo": "tamanho", "aluno_certo": false, "certa": "1x1"},
+        {"id": "C1d", "descricao": "item d", "tipo": "tamanho", "aluno_certo": true, "certa": "nao existe"}
+      ]
+    },
+    {
+      "id": "C2",
+      "enunciado": "Ex. 2: calcule | 2  1 ; 0  3 | · | 1 ; 4 |  (2×2 vezes vetor coluna 2×1)\nEx. 3: calcule | 1  0  2 | · | 3 ; 1 ; 2 |  (1×3 vezes vetor coluna 3×1)",
+      "resposta": "Ex. 2: | 6 ; 12 |\nEx. 3: | 3  0  4 |",
+      "itens": [
+        {"id": "C2a", "descricao": "resultado do Ex. 2", "tipo": "matriz", "aluno_certo": true, "certa": [[6], [12]]},
+        {"id": "C2b", "descricao": "resultado do Ex. 3", "tipo": "matriz", "aluno_certo": false, "certa": [[7]]}
+      ]
+    },
+    {
+      "id": "C3",
+      "enunciado": "Com A = | 1  2 ; 0  1 | e B = | 3  0 ; 1  2 |, calcule A·B e B·A. Deram iguais?",
+      "resposta": "A·B = | 5  4 ; 1  2 |\nB·A = | 3  6 ; 1  4 |\nNão deram iguais.",
+      "itens": [
+        {"id": "C3a", "descricao": "A·B", "tipo": "matriz", "aluno_certo": true, "certa": [[5, 4], [1, 2]]},
+        {"id": "C3b", "descricao": "B·A", "tipo": "matriz", "aluno_certo": true, "certa": [[3, 6], [1, 4]]},
+        {"id": "C3c", "descricao": "se deram iguais", "tipo": "vf", "aluno_certo": true, "certa": ""}
+      ]
+    },
+    {
+      "id": "C4",
+      "enunciado": "Ache x e y para a matriz ser simétrica:\n| 1  x+y  3 |\n| 5   2   y |\n| 3   4   0 |",
+      "resposta": "y = 4 e x = 5",
+      "itens": [
+        {"id": "C4x", "descricao": "valor de x", "tipo": "numero", "aluno_certo": false, "certa": 1},
+        {"id": "C4y", "descricao": "valor de y", "tipo": "numero", "aluno_certo": true, "certa": 4}
+      ]
+    },
+    {
+      "id": "C5",
+      "enunciado": "Ache x para a matriz | 3  x² ; 9  1 | ser simétrica. Quantas respostas existem?",
+      "resposta": "x = 3, só uma resposta.",
+      "itens": [
+        {"id": "C5x", "descricao": "valores de x", "tipo": "conjunto", "aluno_certo": false, "certa": [3, -3]}
+      ]
+    },
+    {
+      "id": "C6",
+      "enunciado": "Diga se cada afirmação do Rafael está certa:\na) Toda matriz simétrica tem a diagonal principal zerada.\nb) Se A é 2×3, então Aᵗ·A é 3×3.\nc) (A·B)ᵗ = Aᵗ·Bᵗ para quaisquer A e B que possam ser multiplicadas.\nd) Uma matriz 2×3 pode ser simétrica, basta os elementos espelhados serem iguais.",
+      "resposta": "a) certa\nb) certa\nc) certa\nd) certa",
+      "itens": [
+        {"id": "C6a", "descricao": "afirmação a", "tipo": "vf", "aluno_certo": false, "certa": ""},
+        {"id": "C6b", "descricao": "afirmação b", "tipo": "vf", "aluno_certo": true, "certa": ""},
+        {"id": "C6c", "descricao": "afirmação c", "tipo": "vf", "aluno_certo": false, "certa": ""},
+        {"id": "C6d", "descricao": "afirmação d", "tipo": "vf", "aluno_certo": false, "certa": ""}
+      ]
+    },
+    {
+      "id": "C7",
+      "enunciado": "Calcule A·B com A = | 2  -1 ; 3  0 | e B = | 1  4 ; -2  5 |.",
+      "resposta": "A·B = | 0  3 ; 3  12 |",
+      "itens": [
+        {"id": "C7a", "descricao": "elemento c11", "tipo": "numero", "aluno_certo": false, "certa": 4},
+        {"id": "C7b", "descricao": "elemento c12", "tipo": "numero", "aluno_certo": true, "certa": 3},
+        {"id": "C7c", "descricao": "elemento c21", "tipo": "numero", "aluno_certo": true, "certa": 3},
+        {"id": "C7d", "descricao": "elemento c22", "tipo": "numero", "aluno_certo": true, "certa": 12}
+      ]
+    }
+  ]
+}
