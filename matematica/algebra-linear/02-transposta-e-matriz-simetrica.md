@@ -81,6 +81,30 @@ A = | 2  1 |      Aᵗ = | 2  1 |      iguais
 
 **Ajuste de vocabulário:** não são as "extremidades", são os elementos **espelhados pela diagonal principal** (aᵢⱼ com aⱼᵢ). Na 2×2 coincide com os cantos fora da diagonal, mas numa 3×3 o a23 e o a32 ficam no meio das bordas e também precisam bater.
 
+### Se A é simétrica, então A - A' = 0?
+
+**Sim, certo.** Como `A' = A`, vale `A - A' = A - A`, e isso dá a **matriz nula** O (todos os elementos 0), não o número 0. A volta também vale: `A - A' = O` implica `A' = A`, então é um jeito de testar se A é simétrica.
+
+Conferido em Python com uma 3×3 simétrica: `A - A.T` deu só zeros. Numa não simétrica (`[[1,2],[3,4]]`) deu `[[0,-1],[1,0]]`, diferente de O.
+
+### Como confirmar que uma matriz é simétrica? E A + A', é simétrica?
+
+Regra em 3 passos:
+
+1. **É quadrada?** Se não for (ex: 2×3), nunca é simétrica, porque a transposta tem outro tamanho.
+2. **Os pares espelhados batem?** Compare cada aᵢⱼ com aⱼᵢ, só de um lado da diagonal. São n·(n - 1)/2 pares. Basta um par diferente para não ser simétrica.
+3. **A diagonal principal não entra no teste**, ela se espelha em si mesma.
+
+Se a matriz tiver incógnita, iguala cada par e resolve, como no x² = 2x - 1 acima.
+
+**A + A' é sempre simétrica**, para qualquer A quadrada, simétrica ou não:
+
+```
+(A + A')' = A' + (A')' = A' + A = A + A'
+```
+
+Exemplo: `B = | 1 2 ; 3 4 |` dá `B + B' = | 2 5 ; 5 8 |`. O mesmo vale para A·A', usando (A·B)ᵗ = Bᵗ·Aᵗ: `(A·A')' = (A')'·A' = A·A'`. Conferido em Python com 1000 matrizes 4×4 aleatórias.
+
 ## Em código
 
 ```python

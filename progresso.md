@@ -20,6 +20,25 @@
 
 ## Linha do tempo
 
+### 05/11/2026 (2ª sessão) - Transposta e matriz simétrica
+
+**Perguntas feitas:**
+
+1. Se A é simétrica, então A - A' = 0.
+2. Se há uma regra para confirmar que uma matriz é simétrica (e pediu para ver A + A').
+
+**Modelo:** Sonnet 5.5
+
+**O que ficou claro:**
+
+- A' = A implica A - A' = matriz nula. A volta também vale.
+- Ajuste: o resultado é a matriz nula O, não o número 0.
+- Regra: quadrada, pares espelhados iguais, diagonal livre. A + A' e A·A' são sempre simétricas.
+
+**Observação:** montou sozinho uma consequência da definição de simétrica, sem exemplo numérico. Ainda não é exercício resolvido, o status continua "praticando".
+
+**Em aberto:** exercícios das notas 01 e 02, e os dois propostos no fim da sessão (transposta de `| 1 2 3 ; 2 4 5 |` e x em `| 1 x ; 4 1 |`).
+
 ### 05/11/2026 - Transposta e matriz simétrica
 
 **Perguntas feitas:**
