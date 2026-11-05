@@ -1,0 +1,88 @@
+{
+ "f8ddb23f": {
+  "sessao": "f8ddb23f",
+  "data": "2026-11-05 08:13",
+  "modelo": "claude-opus-5-5",
+  "turnos_estudo": 2,
+  "chamadas_estudo": 8,
+  "custo_estudo": 0.7053,
+  "custo_estudo_preco_opus": 0.7053,
+  "tokens_estudo": {
+   "gravacao_cache": 54459,
+   "leitura_cache": 563251,
+   "saida": 7845
+  },
+  "turnos_outros": 2,
+  "custo_outros": 2.5585,
+  "python_antes_de_salvar": "1/1",
+  "turnos": [
+   {
+    "texto": "Indo pra trilha de matemática onde parei",
+    "tipo": "estudo",
+    "chamadas": 3,
+    "custo": 0.4264
+   },
+   {
+    "texto": "Se A linha = A em uma matriz quadrática significa que a transposta des",
+    "tipo": "estudo",
+    "chamadas": 5,
+    "custo": 0.2789
+   },
+   {
+    "texto": "Será que eu reduzir o modelo para economizar tokens é viável para essa",
+    "tipo": "outro",
+    "chamadas": 8,
+    "custo": 0.9767
+   },
+   {
+    "texto": "Crie um harness para sabermos isso, ai vou reiniciar a sessão já com o",
+    "tipo": "outro",
+    "chamadas": 13,
+    "custo": 1.5819
+   }
+  ]
+ },
+ "e24381d6": {
+  "sessao": "e24381d6",
+  "data": "2026-11-03 22:51",
+  "modelo": "claude-opus-5-5",
+  "turnos_estudo": 3,
+  "chamadas_estudo": 3,
+  "custo_estudo": 0.4566,
+  "custo_estudo_preco_opus": 0.4566,
+  "tokens_estudo": {
+   "gravacao_cache": 42642,
+   "leitura_cache": 175982,
+   "saida": 4011
+  },
+  "turnos_outros": 1,
+  "custo_outros": 0.8503,
+  "python_antes_de_salvar": "0/0",
+  "turnos": [
+   {
+    "texto": "Multiplicação de matrizes como funciona",
+    "tipo": "estudo",
+    "chamadas": 1,
+    "custo": 0.3664
+   },
+   {
+    "texto": "É possível multiplicar uma matriz por exemplo eu tenho 2 com 3 colunas",
+    "tipo": "estudo",
+    "chamadas": 1,
+    "custo": 0.0603
+   },
+   {
+    "texto": "e uma matriz 2 x 3 vezes 3 x 1",
+    "tipo": "estudo",
+    "chamadas": 1,
+    "custo": 0.0299
+   },
+   {
+    "texto": "Crie uma pasta para esses estudos que estamos tendo no desktop, porque",
+    "tipo": "outro",
+    "chamadas": 8,
+    "custo": 0.8503
+   }
+  ]
+ }
+}
