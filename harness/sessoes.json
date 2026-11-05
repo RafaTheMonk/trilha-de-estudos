@@ -12,8 +12,8 @@
    "leitura_cache": 563251,
    "saida": 7845
   },
-  "turnos_outros": 2,
-  "custo_outros": 2.5585,
+  "turnos_outros": 4,
+  "custo_outros": 4.101,
   "python_antes_de_salvar": "1/1",
   "turnos": [
    {
@@ -37,8 +37,20 @@
    {
     "texto": "Crie um harness para sabermos isso, ai vou reiniciar a sessão já com o",
     "tipo": "outro",
-    "chamadas": 13,
-    "custo": 1.5819
+    "chamadas": 18,
+    "custo": 1.9206
+   },
+   {
+    "texto": "ME traga em 3 paragráfos de maneira técnica o que desenvolvemos agora,",
+    "tipo": "outro",
+    "chamadas": 5,
+    "custo": 0.4262
+   },
+   {
+    "texto": "Cria um github pro projeto, vou por no linkedin o post com o paragráfo",
+    "tipo": "outro",
+    "chamadas": 9,
+    "custo": 0.7777
    }
   ]
  },
